@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Days from './Components/Days/Days';
+import Information from './Components/Information/Information';
+import Place from './Components/Place/Place';
+import Pogoda from './Components/Pogoda/Pogoda';
+import Weather from './Components/WeatherBoard/weatherBoard';
+import WeatherTime from './Components/WeatherTime/WeatherTime';
+import InfoString from './Components/infoString/InfoString';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Weather> 
+        <Place />
+
+        <Pogoda />
+        <InfoString />
+        
+        <WeatherTime />
+
+      </Weather>
+
     </div>
   );
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function fetchWeather() {
+            try {
+                const res = await fetch("https://api.open-meteo.com/v1/forecast?latitude=57.15&longitude=65.53&hourly=temperature_2m,relativehumidity_2m,windspeed_10m&current_weather=true&windspeed_unit=ms&forecast_days=1")
+                const parsedRes = await res.json()   
+                return parsedRes
+                
+            } catch(error) {
+                console.log(error)
+            }
+            }
+            
+            const data = fetchWeather()
+            console.log(data)
+
+
+
+
+
+            // const promise = new Promise ((resolve, reject) => {
+            //     let data = ""
+            //     setTimeout(() => {
+            //         try {
+            //             data = "success" 
+            //             throw new Error("error")
+            //             resolve(data)
+            //         } catch(error) {
+            //             reject(error)
+            //         }
+            //     }, 500)
+            // }) 
+            // promise.then((value) => {
+            //     console.log(value)
+
+            // }).catch((error) => {
+            //     console.log(error)
+            // })
+
+        //   const res =  fetch("https://api.open-meteo.com/v1/forecast?latitude=57.15&longitude=65.53&hourly=temperature_2m,relativehumidity_2m,windspeed_10m&current_weather=true&windspeed_unit=ms&forecast_days=1")
+        //     console.log(res)
+
+                // let data 
+                // setTimeout(() => {
+                //     data = "success"
+                // }, 500)
+                // console.log(data)
+    </script>
+</body>
+</html>
